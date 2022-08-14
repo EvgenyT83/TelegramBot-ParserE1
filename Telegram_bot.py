@@ -18,9 +18,9 @@ def main():
         elif message.text == "/help":
             bot.send_message(message.from_user.id, "Напиши е1 для новостей")
         elif message.text == "е1" or message.text == "e1":
-            bot.send_message(message.from_user.id, "Последние новости с сайта Е1:")
+            bot.send_message(message.from_user.id, "Последние 10 новостей с сайта Е1:")
             all_news = req()
-            for news in all_news:
+            for news in all_news[:10]:
                 bot.send_message(message.from_user.id, news)
         else:
             bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")
